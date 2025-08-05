@@ -1,0 +1,153 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix so: <https://schema.org/> .
+@prefix stardog: <tag:stardog:api:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://api.stardog.com/> .
+@prefix Prod_Ont: <https://ph.org/prod/ontology#> .
+@prefix Prod_data: <https://ph.org/prod/data#> .
+
+<https://ph.org/prod/ontology> a owl:Ontology ;
+   rdfs:label "Product Catalog Ontology"@en ;
+   rdfs:comment "An ontology for describing product catalogs, categories, brands, and product variants."@en ;
+   owl:versionInfo "2.0" .
+Prod_Ont:Product a owl:Class .
+Prod_Ont:Brand a owl:Class .
+Prod_Ont:CategoryTree a owl:Class .
+Prod_Ont:Category a owl:Class .
+Prod_Ont:ProductVariant a owl:Class .
+Prod_Ont:hasBrand a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range Prod_Ont:Brand ;
+   owl:inverseOf Prod_Ont:brandHasProduct ;
+   rdfs:label "hasBrand" .
+Prod_Ont:hasParentCategory a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:Category ;
+   rdfs:range Prod_Ont:Category ;
+   owl:inverseOf Prod_Ont:hasSubCategory ;
+   rdfs:label "hasParentCategory" .
+Prod_Ont:hasSubCategory a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:Category ;
+   rdfs:range Prod_Ont:Category ;
+   owl:inverseOf Prod_Ont:hasParentCategory ;
+   rdfs:label "hasSubCategory" .
+Prod_Ont:hasVariant a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range Prod_Ont:ProductVariant ;
+   owl:inverseOf Prod_Ont:variantOf ;
+   rdfs:label "hasVariant" .
+Prod_Ont:name a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:Brand , Prod_Ont:CategoryTree , Prod_Ont:Category ;
+   rdfs:range xsd:string .
+Prod_Ont:type a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:string .
+Prod_Ont:sku a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:string .
+Prod_Ont:description a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:Brand , Prod_Ont:Category ;
+   rdfs:range xsd:string .
+Prod_Ont:weight a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:decimal .
+Prod_Ont:width a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:decimal .
+Prod_Ont:depth a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:decimal .
+Prod_Ont:height a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:decimal .
+Prod_Ont:price a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:decimal .
+Prod_Ont:cost_price a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:decimal .
+Prod_Ont:retail_price a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:decimal .
+Prod_Ont:sale_price a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:decimal .
+Prod_Ont:fixed_cost_shipping_price a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:decimal .
+Prod_Ont:is_free_shipping a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:boolean .
+Prod_Ont:upc a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:string .
+Prod_Ont:search_keywords a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:Category ;
+   rdfs:range xsd:string .
+Prod_Ont:availability a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:string .
+Prod_Ont:sort_order a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:integer .
+Prod_Ont:order_quantity_minimum a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:integer .
+Prod_Ont:order_quantity_maximum a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:integer .
+Prod_Ont:gtin a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:string .
+Prod_Ont:mpn a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product , Prod_Ont:ProductVariant ;
+   rdfs:range xsd:string .
+Prod_Ont:reviews_rating_sum a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:integer .
+Prod_Ont:reviews_count a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:integer .
+Prod_Ont:total_sold a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:integer .
+Prod_Ont:date_created a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:dateTime .
+Prod_Ont:date_modified a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range xsd:dateTime .
+Prod_Ont:sku_id a owl:DatatypeProperty ;
+   rdfs:domain Prod_Ont:ProductVariant ;
+   rdfs:range xsd:integer .
+Prod_Ont:brandHasProduct a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:Brand ;
+   rdfs:range Prod_Ont:Product ;
+   owl:inverseOf Prod_Ont:hasBrand ;
+   rdfs:label "brandHasProduct" .
+Prod_Ont:assignedCategory a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:Product ;
+   rdfs:range Prod_Ont:Category ;
+   owl:inverseOf Prod_Ont:includesProduct ;
+   rdfs:label "assignedCategory" .
+Prod_Ont:includesProduct a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:Category ;
+   rdfs:range Prod_Ont:Product ;
+   owl:inverseOf Prod_Ont:assignedCategory ;
+   rdfs:label "includesProduct" .
+Prod_Ont:hassubcategory a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:CategoryTree ;
+   rdfs:range Prod_Ont:Category ;
+   owl:inverseOf Prod_Ont:hasParentCategoryInTree ;
+   rdfs:label "hasSubcategory" .
+Prod_Ont:hasParentCategoryInTree a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:Category ;
+   rdfs:range Prod_Ont:CategoryTree ;
+   owl:inverseOf Prod_Ont:hassubcategory ;
+   rdfs:label "hasParentCategoryInTree" .
+Prod_Ont:variantOf a owl:ObjectProperty ;
+   rdfs:domain Prod_Ont:ProductVariant ;
+   rdfs:range Prod_Ont:Product ;
+   owl:inverseOf Prod_Ont:hasVariant ;
+   rdfs:label "variantOf" .
