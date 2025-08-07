@@ -1,0 +1,106 @@
+[
+  {
+    "category_id": 1,
+    "tree_id": 1,
+    "parent_id": null,
+    "name": "Staples",
+    "description": "Basic food staples like rice, wheat, pulses",
+    "search_keywords": "rice, wheat, flour, pulses, grains"
+  },
+  {
+    "category_id": 2,
+    "tree_id": 1,
+    "parent_id": 1,
+    "name": "Rice",
+    "description": "Different varieties of rice",
+    "search_keywords": "basmati, sona masoori, rice"
+  },
+  {
+    "category_id": 3,
+    "tree_id": 1,
+    "parent_id": 2,
+    "name": "Basmati Rice",
+    "description": "Premium long grain basmati rice",
+    "search_keywords": "basmati rice, long grain rice"
+  },
+  {
+    "category_id": 4,
+    "tree_id": 2,
+    "parent_id": null,
+    "name": "Hair Care",
+    "description": "Products for hair care and styling",
+    "search_keywords": "shampoo, conditioner, hair oil"
+  },
+  {
+    "category_id": 5,
+    "tree_id": 2,
+    "parent_id": 4,
+    "name": "Shampoo",
+    "description": "Hair cleansing shampoos",
+    "search_keywords": "anti-dandruff shampoo, herbal shampoo"
+  },
+  {
+    "category_id": 6,
+    "tree_id": 2,
+    "parent_id": 5,
+    "name": "Anti-Dandruff Shampoo",
+    "description": "Shampoos specifically targeting dandruff",
+    "search_keywords": "anti-dandruff, scalp care"
+  },
+  {
+    "category_id": 7,
+    "tree_id": 3,
+    "parent_id": null,
+    "name": "Cleaning Supplies",
+    "description": "Home cleaning products",
+    "search_keywords": "floor cleaner, dish wash, surface cleaner"
+  },
+  {
+    "category_id": 8,
+    "tree_id": 3,
+    "parent_id": 7,
+    "name": "Floor Cleaners",
+    "description": "Products used for cleaning floors",
+    "search_keywords": "floor cleaner, mopping liquids"
+  },
+  {
+    "category_id": 9,
+    "tree_id": 3,
+    "parent_id": 8,
+    "name": "Herbal Floor Cleaner",
+    "description": "Natural and herbal floor cleaning products",
+    "search_keywords": "herbal cleaner, natural floor wash"
+  },
+  {
+    "category_id": 10,
+    "tree_id": 4,
+    "parent_id": null,
+    "name": "Nutritional Supplements",
+    "description": "Supplements for health and wellness",
+    "search_keywords": "vitamins, protein, minerals"
+  },
+  {
+    "category_id": 11,
+    "tree_id": 4,
+    "parent_id": 10,
+    "name": "Proteins",
+    "description": "Protein powders and supplements",
+    "search_keywords": "whey protein, plant protein"
+  },
+  {
+    "category_id": 12,
+    "tree_id": 4,
+    "parent_id": 11,
+    "name": "Whey Protein",
+    "description": "Whey protein powders",
+    "search_keywords": "whey protein powder, muscle building"
+  },
+  {
+    "category_id": 13,
+    "tree_id": 4,
+    "parent_id": 12,
+    "name": "Flavored Whey Protein",
+    "description": "Flavored variants of whey protein",
+    "search_keywords": "chocolate whey protein, vanilla whey protein"
+  }
+]

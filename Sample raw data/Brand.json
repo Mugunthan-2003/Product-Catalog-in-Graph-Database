@@ -1,0 +1,52 @@
+[
+{
+"id": 1,
+"name": "Amul",
+"description": "India's largest dairy brand known for milk, butter, cheese, and other dairy products."
+},
+{
+"id": 2,
+"name": "Patanjali Ayurved",
+"description": "Indian consumer goods company offering herbal and natural products in personal care, food, and health care."
+},
+{
+"id": 3,
+"name": "Hindustan Unilever",
+"description": "Leading FMCG company with a diverse portfolio including personal care, home care, and food products."
+},
+{
+"id": 4,
+"name": "Britannia",
+"description": "Popular brand in bakery and dairy products including biscuits, bread, and dairy items."
+},
+{
+"id": 5,
+"name": "Dabur",
+"description": "Well-known Indian brand specializing in natural health care, personal care, and food products."
+},
+{
+"id": 6,
+"name": "Tata Consumer Products",
+"description": "Diversified consumer products company in tea, coffee, water, and other beverages."
+},
+{
+"id": 7,
+"name": "Godrej Consumer Products",
+"description": "Company specializing in personal care, hair care, and household products."
+},
+{
+"id": 8,
+"name": "Nestlé India",
+"description": "Multinational brand offering dairy, beverages, and convenience food products in India."
+},
+{
+"id": 9,
+"name": "Colgate-Palmolive India",
+"description": "Leading oral care and personal hygiene brand in India."
+},
+{
+"id": 10,
+"name": "Patak's",
+"description": "Indian food brand known for spices, pickles, sauces, and ready-to-eat Indian meals."
+}
+]
